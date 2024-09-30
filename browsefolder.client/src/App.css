@@ -1,207 +1,60 @@
-﻿/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #e9ecef; /* Softer background */
-}
-
-/* Container Styles */
-#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: left;
-    
-}
-
-/* File Browser Styles */
-.file-browser-container {
-    width: 1280px;
-    height: 720px;
-    margin: 20px;
-    background-color: #ffffff; /* White background for the file browser */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    padding: 10px 10px 10px 10px; /* Padding for inner spacing */
-}
-
-/* Header Styles */
-.header {
-    display: contents;
-    align-items: end;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.record-title {
-    color: #343a40; /* Darker title color */
-    font-size: 24px; /* Larger font size for the title */
-    font-weight: bold; /* Bold title */
-    border:thin solid #343a40; /* Border for the title */
-}
-
-/* Upload Section Styles */
-.upload-container {
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Increased gap */
-}
-
-.file-input {
-    display: none; /* Hide the file input */
-}
-
-.icon {
-    font-size: 26px; /* Slightly larger icon size */
-    cursor: pointer;
-    color: #007BFF; /* Icon color */
-    transition: color 0.3s; /* Smooth transition for hover */
-}
-
-.icon:hover {
-    color: #0056b3; /* Darker hover color */
-}
-
-/* Back Button Styles */
-.back-btn {
-    padding: 10px 15px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition for hover */
-}
-
-.back-btn:hover {
-    background-color: #0056b3; /* Darker background on hover */
-}
-
-/* File List Styles */
-.file-list-container {
-    margin-top: 20px;
-}
-
-.file-list {
-    list-style: none;
-    padding: 0;
-}
-
-.file-item {
-    display: flex;
-    align-items: center; /* Center items vertically */
-    margin: 15px 0; /* Increased vertical margin */
-    font-size: 18px;
-    padding-left: 20px; /* Indent for tree view */
-    transition: background-color 0.3s; /* Smooth background transition */
-}
-
-.file-item:hover {
-    background-color: #f8f9fa; /* Light grey background on hover */
-}
-
-/* Folder and File Item Styles */
-.folder-item {
-    cursor: pointer;
-    color: #007BFF; /* Folder item color */
-    transition: color 0.3s; /* Smooth transition for hover */
-}
-
-.folder-item:hover {
-    color: #0056b3; /* Darker color on hover */
-}
-
-.file-link {
-    text-decoration: none;
-    color: #343a40; /* Darker color for file links */
-    transition: color 0.3s; /* Smooth transition for hover */
-}
-
-.file-link:hover {
-    text-decoration: underline;
-    color: #007BFF; /* Change color on hover */
-}
-
-/* Icon Styles */
-.folder-icon {
-    margin-right: 10px; /* Space between the icon and folder name */
-    color: #007BFF; /* Folder icon color */
-    transition: color 0.3s; /* Smooth transition for hover */
-}
-
-.folder-icon:hover {
-    color: #0056b3; /* Darker color on hover */
-}
-
-.file-icon {
-    margin-right: 10px; /* Space between the icon and file name */
-    color: #28a745; /* File icon color */
-    transition: color 0.3s; /* Smooth transition for hover */
-}
-
-.file-icon:hover {
-    color: #218838; /* Darker green on hover */
-}
-
-/* Modal Styles */
-.modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
-}
-
-.modal-content {
-    background-color: white;
-    padding: 30px; /* Increased padding */
-    border-radius: 8px; /* Rounded corners */
-    width: 320px; /* Slightly wider modal */
+﻿.App {
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
 
-.modal-content input {
-    width: 90%; /* Wider input */
-    padding: 12px; /* More padding for better UX */
-    margin: 15px 0; /* Increased margin */
-    border: 1px solid #ced4da; /* Light border */
-    border-radius: 4px; /* Rounded edges */
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
 }
 
-.modal-actions {
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
-}
-
-.save-btn,
-.cancel-btn {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition for hover */
-}
-
-.save-btn {
-    background-color: #28a745;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
     color: white;
 }
 
-.cancel-btn {
-    background-color: #dc3545;
-    color: white;
+.App-link {
+    color: #61dafb;
 }
 
-.save-btn:hover {
-    background-color: #218838; /* Darker green on hover */
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
-.cancel-btn:hover {
-    background-color: #c82333; /* Darker red on hover */
+#root {
+    text-align: left;
 }
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.submit {
+    margin-top: 1rem;
+    background-color: #4f8c00;
+}
+
+.submit:hover {
+    border-color: #d6d8fa;
+}
+
