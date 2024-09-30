@@ -211,6 +211,30 @@ namespace OpenFolder.Server.Controllers
             }
         }
 
+        //Endpoint to create a new folder
+        [HttpPost("create-folder")]
+        public IActionResult CreateFolder([FromQuery] string path, [FromQuery] string folderName)
+        {
+            try
+            {
+                // Build the full path
+                var fullPath = Path.Combine(_basePath, path, folderName);
+
+                if (Directory.Exists(fullPath))
+                {
+                    return BadRequest("Folder already exists.");
+                }
+
+                // Create the folder
+                Directory.CreateDirectory(fullPath);
+
+                return Ok(new { message = "Folder created successfully!" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
 
     }
 }
